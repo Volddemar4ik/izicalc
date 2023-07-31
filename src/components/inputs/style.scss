@@ -1,0 +1,94 @@
+.inputs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .inputs__item-container {
+        width: 30%;
+
+        .input-wrapper {
+            min-width: 240px;
+            width: 100%;
+
+            .input-wrapper__helper-text {
+                margin-left: 8px;
+                margin-bottom: 4px;
+                text-align: left;
+            }
+
+            .input-wrapper__input-field {
+                display: flex;
+                height: 40px;
+                overflow: hidden;
+                border-radius: 5px;
+
+                .input-wrapper__start-icon {
+                    width: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+                }
+            }
+        }
+    }
+
+    .inputs__checkbox-input {
+        padding-left: 16px;
+        width: fit-content !important;
+    }
+
+    .inputs__button {
+        .confirm-button {
+            margin: 0 auto;
+            margin-top: 10px;
+            width: 80%;
+            height: 45px;
+            font-size: 1.075em;
+            background-color: rgb(66, 165, 244);
+            display: flex;
+            justify-content: center;
+
+            .confirm-button__start-icon {
+                font-size: 1.75em;
+            }
+        }
+    }
+
+    @media(max-width: 1023px) {
+        .inputs__item-container {
+            margin-bottom: 15px;
+        }
+
+        .inputs__checkbox-input {
+            padding-left: 8px;
+            margin-top: -8px;
+        }
+
+        .inputs__numeric-input {
+            flex: 1 1 auto;
+            width: 100%;
+        }
+
+        .inputs__select-input {
+            flex: 0 0 auto;
+            width: 45%;
+        }
+
+        .inputs__date-input {
+            flex: 0 0 auto;
+            width: 45%;
+        }
+    }
+
+    @media(max-width: 767px) {
+        .inputs__item-container {
+            width: 100%;
+
+            .inputs-wrapper__helper-text_checkbox-text {
+                font-size: 0.75em;
+            }
+        }
+    }
+}

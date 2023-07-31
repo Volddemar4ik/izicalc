@@ -1,0 +1,32 @@
+.select-block {
+    width: 100%;
+
+    .select-block__select-form {
+        height: 100%;
+        text-align: start;
+        padding-left: 12px;
+
+        .MuiSelect-select {
+            background-color: #fff;
+        }
+    }
+}
+
+.MuiFormControl-root {
+    .select-block__select-form::before {
+        border: none;
+    }
+
+    .select-block__select-form::after {
+        border: none;
+    }
+
+    .select-block__select-form:hover:not(.Mui-disabled, .Mui-error)::before {
+        border: none;
+    }
+
+    div[class*="MuiSelect-select-MuiInputBase-input-MuiInput-input"]:focus {
+        border: none;
+        background-color: #fff;
+    }
+}

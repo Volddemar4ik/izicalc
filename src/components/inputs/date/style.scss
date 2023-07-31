@@ -1,0 +1,94 @@
+.MuiBox-root {
+    div[class*="MuiStack-root"] {
+        width: 100%;
+        padding: 0;
+        margin-left: -2px;
+        align-self: center;
+    }
+
+    div[class*="MuiStack-root"]>.MuiTextField-root {
+        height: 95%;
+        width: 100%;
+    }
+
+    .MuiOutlinedInput-notchedOutline {
+        border: none;
+    }
+
+    div[class*="MuiInputBase-root-MuiOutlinedInput-root"].Mui-focused {
+        .MuiOutlinedInput-notchedOutline {
+            border: none;
+        }
+    }
+}
+
+div[class*="MuiButtonBase-root-MuiChip-root"] {
+    width: 100%;
+}
+
+.Mui-selected:hover {
+    background-color: rgba(66, 165, 245, 0.7) !important;
+}
+
+.Mui-selected {
+    background-color: rgba(66, 165, 245, 0.7) !important;
+}
+
+button[class*="MuiButtonBase-root-MuiMenuItem-root"].Mui-selected {
+    background-color: rgba(66, 165, 245, 0.3) !important;
+}
+
+button[class*="MuiButtonBase-root-MuiMenuItem-root"].Mui-selected:hover {
+    background-color: rgba(66, 165, 245, 0.3) !important;
+}
+
+div[class*="MuiPickersLayout-root"] {
+    .MuiPickersLayout-actionBar {
+        width: 100%;
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 767px) {
+    .MuiBox-root {
+        div[class*="MuiStack-root"] {
+            align-self: start;
+        }
+    }
+
+    .MuiDialogContent-root {
+        div[class*="MuiPickersLayout-root"] {
+            display: flex;
+            flex-wrap: wrap;
+
+            .MuiPickersLayout-toolbar {
+                align-self: flex-start;
+                padding-bottom: 8px;
+            }
+
+            .MuiPickersLayout-shortcuts {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                max-width: 100%;
+
+                li[class*="MuiListItem-root"] {
+                    width: 30%;
+                    justify-content: space-evenly;
+                    padding: 4px 8px;
+
+                    div[class*="MuiButtonBase-root-MuiChip-root"] {
+                        max-width: 110px;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    div[class*="MuiPickersLayout-contentWrapper"] {
+        margin-top: -10px;
+    }
+}

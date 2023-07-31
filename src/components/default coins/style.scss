@@ -1,0 +1,190 @@
+    .coins-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        background-color: #fff;
+        max-width: 100%;
+
+        .coins-list__coin-block {
+            width: 15%;
+            max-width: 130px;
+            padding: 0;
+            margin: 4px;
+
+            .coins-list__coin-block-button {
+                border-radius: 50px;
+                padding: 5px;
+                background-color: #f5f5f5;
+
+                .coins-list__coin-avatar-block {
+                    min-width: fit-content;
+
+                    .coins-list__coin-avatar {
+                        width: 45px;
+                        height: 45px;
+                    }
+
+                    .coin-list__coin-avatar_add {
+                        background-color: rgba(66, 165, 245, 0.7);
+                    }
+                }
+
+                .coins-list__coin-text-block {
+                    width: 70px;
+                    margin: 0;
+                    margin-left: 5px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+
+                    .coins-list__coin-text {
+                        font-size: 1.25em;
+                        font-weight: 400;
+                        text-align: center;
+                    }
+                }
+            }
+
+            .coins-list__coin-block-button:hover {
+                background-color: transparent;
+            }
+        }
+
+        .coins-list__coin-block_chosen_disabled {
+            opacity: 0.3;
+        }
+    }
+
+    ul[class*='MuiList-root'] {
+        padding: 0;
+        margin: 0 auto
+    }
+
+    @media(max-width: 1199px) {
+        .coins-list {
+            max-width: 700px;
+            margin: 0 auto;
+
+            .coins-list__coin-block {
+                width: 25%;
+                max-width: 115px;
+
+                .coins-list__coin-block-button {
+
+                    .coins-list__coin-avatar-block {
+                        .coins-list__coin-avatar {
+                            width: 40px;
+                            height: 40px;
+                        }
+                    }
+
+                    .coins-list__coin-text-block {
+                        width: 60px;
+
+                        .coins-list__coin-text {
+                            font-size: 1.125em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media(max-width: 767px) {
+        .coins-list {
+            justify-content: space-evenly;
+
+            .coins-list__coin-block {
+                width: 50px;
+                padding: 0;
+
+                .coins-list__coin-block-button {
+                    flex-direction: column;
+                    padding: 4px;
+                    background-color: transparent;
+
+                    .coins-list__coin-text-block {
+                        width: 60px;
+                        text-align: center;
+                        margin: 0;
+                        margin-top: 5px;
+
+                        .coins-list__coin-text {
+                            font-size: 1em;
+                        }
+                    }
+                }
+
+                span[class*='MuiBadge-root'] {
+                    width: inherit;
+                }
+            }
+        }
+    }
+
+    @media(max-width: 479px) {
+        .coins-list {
+            justify-content: space-between;
+
+            .coins-list__coin-block {
+                width: 40px;
+                margin: 0;
+
+                .coins-list__coin-block-button {
+                    padding: 2px;
+
+                    .coins-list__coin-avatar-block {
+                        .coins-list__coin-avatar {
+                            width: 35px;
+                            height: 35px;
+                        }
+                    }
+
+                    .coins-list__coin-text-block {
+                        width: 40px;
+
+                        .coins-list__coin-text {
+                            font-size: 0.75em;
+                        }
+                    }
+                }
+
+                span[class*='MuiBadge-root'] {
+                    width: inherit;
+                }
+            }
+        }
+
+    }
+
+    @media(max-width: 399px) {
+        .coins-list {
+            .coins-list__coin-block {
+                width: 30px;
+
+                .coins-list__coin-block-button {
+                    padding: 0;
+
+                    .coins-list__coin-avatar-block {
+                        .coins-list__coin-avatar {
+                            width: 30px;
+                            height: 30px;
+                        }
+                    }
+
+                    .coins-list__coin-text-block {
+                        width: 30px;
+
+                        .coins-list__coin-text {
+                            font-size: 0.625em;
+                        }
+                    }
+                }
+
+                span[class*='MuiBadge-root'] {
+                    width: inherit;
+                }
+            }
+        }
+    }

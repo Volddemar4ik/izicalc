@@ -1,0 +1,24 @@
+.numeric-input-block {
+    width: 100%;
+    margin-left: 12px;
+}
+
+.numeric-input-block__popover {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px 0;
+
+    .numeric-input-block__chip {
+        width: 25%;
+        margin: 7px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+    }
+
+    .numeric-input-block_chosed_active {
+        background-color: rgba(66, 165, 245, 0.7)
+    }
+}
