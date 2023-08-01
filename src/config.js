@@ -105,7 +105,8 @@ const configs = {
                 return today.set('year', 2013).set('month', 0).set('date', 1)
             },
         },
-    ]
+    ],
+    delayTimerTooltip: 12000
 }
 
 export default configs

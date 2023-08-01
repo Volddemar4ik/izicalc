@@ -2,10 +2,12 @@ import React, { useEffect, useRef, useState } from "react";
 import ChartRender from "./chart";
 import { Box } from "@mui/material";
 import useData from "../../hook/use-data";
-import FinalTooltip from "./tooltip/final-tooltip";
+import FinalTooltip from "./tooltip/final-tooltip"
+import configs from "../../config";
 
 export default function ChartWrapper({ data, updateKey, width, height, isChartAnimated }) {
     const { requestData } = useData()
+    const delayTimerTooltip = configs.delayTimerTooltip
     const coinId = requestData.id
     const investmentPeriod = requestData.period
     const [isOpenToolTip, setIsOpenToolTip] = useState(false)
@@ -26,7 +28,7 @@ export default function ChartWrapper({ data, updateKey, width, height, isChartAn
         if (isOpenToolTip) {
             timeoutId = setTimeout(() => {
                 setIsOpenToolTip(false)
-            }, 4000)
+            }, delayTimerTooltip + 100)
         }
 
         return () => {
@@ -49,6 +51,7 @@ export default function ChartWrapper({ data, updateKey, width, height, isChartAn
                         setIsOpenToolTip={setIsOpenToolTip}
                         renderTooltipData={renderTooltipData}
                         investmentPeriod={investmentPeriod}
+                        delayTimerTooltip={delayTimerTooltip}
                     />
 
                     <Box
