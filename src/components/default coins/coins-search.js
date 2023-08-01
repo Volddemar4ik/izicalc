@@ -57,9 +57,9 @@ export default function CoinSearch({ setAddedCoin }) {
     const [coinsLoaded, setCoinsLoaded] = useState(0)
     const [searchText, setSearchText] = useState('')
     const [isNewCoinsLoaded, setIsNewCoinsLoaded] = useState(true)
+    const [isSearching, setIsSearching] = useState(false)
     const [isUpButtonOnSearchListActive, setIsUpButtonOnSearchListActive] = useState(false)
     const coinsLoadingLength = configs.coinsLoadingLength
-
 
     useEffect(() => {
         setCoinsList(coinsListJson?.filter(coin => coin?.default !== true))
@@ -75,6 +75,7 @@ export default function CoinSearch({ setAddedCoin }) {
                 coin.symbol.toLowerCase().includes(searchText.toLowerCase())
             )
             setCoinsRenderedList(filteredCoins)
+            setIsSearching(true)
         }
 
         if (searchText === '') {
@@ -108,7 +109,6 @@ export default function CoinSearch({ setAddedCoin }) {
             setIsNewCoinsLoaded(false)
         }
     }, [coinsRenderedList, coinsList, coinsLoadingLength])
-    console.log(coinsRenderedList?.length, coinsList?.length, coinsLoadingLength)
 
     const handleScroll = (e) => {
         const { scrollTop, clientHeight, scrollHeight } = e.target
@@ -271,7 +271,7 @@ export default function CoinSearch({ setAddedCoin }) {
                                         </Box>
                                 }
 
-                                {isNewCoinsLoaded &&
+                                {!isSearching && isNewCoinsLoaded &&
                                     <Box sx={{
                                         display: 'flex',
                                         justifyContent: 'center',

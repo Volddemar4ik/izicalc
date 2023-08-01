@@ -33,7 +33,7 @@ export default function ChartRender({ data, width, height, isChartAnimated, setI
     const yProfitData = []
     const yBalanceData = []
     const yInvestSumData = []
-    const startAmountOfPointsOnChart = 0
+    const startAmountOfPointsOnChart = 1
     const [index, setIndex] = useState(null)
 
     const chartData = useMemo(() => {
