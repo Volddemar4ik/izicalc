@@ -185,17 +185,19 @@ export default function Mainpage() {
                             className='mainpage__graph mainpage__item-container mainpage__not-found-container'
                             sx={{
                                 width: chartContainerWidth,
-                                height: '77vh'
+                                height: '77vh',
+                                padding: '60px',
+                                backgroundColor: 'rgba(196, 196, 196, 0.2)',
                             }}
                         >
                             <Avatar
                                 alt="Information not found"
                                 src='/not-found.png'
-                                sx={{ width: '56px', height: '56px' }}
+                                sx={{ width: '100px', height: '100px' }}
                             />
 
-                            <Typography variant='overline' component='p' fontSize='1.25em'>
-                                Information not found
+                            <Typography variant='body1' component='p' fontSize='1.5em' textAlign='center'>
+                                Information about the coin not found
                             </Typography>
                         </Box>
                     }
