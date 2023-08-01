@@ -187,7 +187,7 @@ export default function Mainpage() {
                                 width: chartContainerWidth,
                                 height: '77vh',
                                 padding: '60px',
-                                backgroundColor: 'rgba(196, 196, 196, 0.2)',
+                                // backgroundColor: 'rgba(196, 196, 196, 0.2)',
                             }}
                         >
                             <Avatar
