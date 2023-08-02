@@ -5,9 +5,11 @@ import functions from '../../functions';
 import coinsListJson from '../../defaults/coinsList.json'
 import { styled } from '@mui/material/styles';
 import configs from '../../config';
-import { useTheme } from '@mui/material/styles';
+// import { useTheme } from '@mui/material/styles';
 import './style.scss'
 import ProgressBars from '../progress-bar';
+import { useParams } from 'react-router-dom';
+import useData from '../../hook/use-data';
 
 const StyledTextField = styled(TextField)(() => ({
     '& .MuiOutlinedInput-input': {
@@ -50,7 +52,9 @@ function SearchInput({ setSearchText, searchText }) {
 }
 
 export default function CoinSearch({ setAddedCoin }) {
+    const { setRequestData } = useData()
     const modalRef = useRef(null)
+    const params = useParams()
     const [openModal, setOpenModal] = useState(false)
     const [coinsList, setCoinsList] = useState(null)
     const [coinsRenderedList, setCoinsRenderedList] = useState(null)
@@ -148,6 +152,13 @@ export default function CoinSearch({ setAddedCoin }) {
     }
 
     function handleClickOnCoinForAddingToDefaultList(value) {
+        if (value?.id === params?.id) {
+            setRequestData(prevState => ({
+                ...prevState,
+                id: value?.id
+            }))
+            setAddedCoin(value)
+        }
         setAddedCoin(value)
     }
 
